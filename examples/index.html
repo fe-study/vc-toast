@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <title>demo - vc-toast</title>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            background: rgba(119, 129, 149, 0.8);
+        }
+        .container {
+            width: 550px;
+            padding: 20px;
+        }
+        .container label {
+            font-weight: normal;
+        }
+        .btn {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">@Vue Component - vc-toast</h1>
+    <div class="text-center">toast component, 支持全局弹出或自定义位置的堆叠按顺序列出，支持设置`top`, `right`值</div>
+    <a style="display: block" class="text-center" href="https://github.com/iwaimai-bi-fe/vc-toast">view on Github</a>
+    <hr>
+
+    <div id="app" class="container">
+
+        <button class="btn btn-default" @click="push">显示一条toast</button>
+        <br>
+
+        <button class="btn btn-info btn-sm" @click="showMeTenSeconds">显示10秒</button>
+        <button class="btn btn-info btn-sm" @click="info">info</button>
+        <button class="btn btn-success btn-sm" @click="success">success</button>
+        <button class="btn btn-danger btn-sm" @click="danger">danger</button>
+        <button class="btn btn-warning btn-sm" @click="warning">warning</button>
+        <button class="btn btn-warning btn-sm" @click="toggleMode">toggle右侧堆叠模式，可直接用自定义位置</button>
+        <br>
+
+        <vc-toast
+            :toasts="toasts"
+            :top="top"
+            :right="right"
+            :stack="stack"
+        >
+        </vc-toast>
+
+        <div class="form-group">
+            <label>配置组件的duration属性</label>
+            <input type="text" class="form-control" placeholder="duration" v-model="duration" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的message属性</label>
+            <input type="text" class="form-control" placeholder="message" v-model="message" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的top属性</label>
+            <input type="text" class="form-control" placeholder="top" v-model="top" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的right属性</label>
+            <input type="text" class="form-control" placeholder="right" v-model="right" />
+        </div>
+
+        <div class="form-group">
+            <div>stack - 是否将toast堆叠列出(默认: false)</div>
+            <label><input type="radio" :value="bools.true" name="stack" v-model="stack">是</label>
+            <label><input type="radio" :value="bools.false" name="stack" v-model="stack">否</label>
+        </div>
+
+        <div class="form-group">
+            <div>配置组件的type</div>
+            <label><input type="radio" value="warning" name="type" v-model="type">warning</label>
+            <label><input type="radio" value="danger" name="type" v-model="type">danger</label>
+            <label><input type="radio" value="success" name="type" v-model="type">success</label>
+            <label><input type="radio" value="info" name="type" v-model="type">info</label>
+            <label><input type="radio" value="primary" name="type" v-model="type">primary</label>
+        </div>
+
+    </div>
+    <script src='../dist/example.js'></script>
+</body>
+</html>
