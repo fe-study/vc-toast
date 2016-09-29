@@ -1,7 +1,7 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-toast",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "toast component by vue.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",

@@ -9,7 +9,7 @@
             <i v-if="type === 'info' && !icon" :class="[ 'glyphicon', 'glyphicon-cloud', type ]"></i>
             <i v-if="type === 'success' && !icon" :class="[ 'glyphicon', 'glyphicon-ok', type ]"></i>
             <i v-if="type === 'danger' && !icon" :class="[ 'glyphicon', 'glyphicon-remove', type ]"></i>
-            <i v-if="type === 'warning' && !icon" :class="[' glyphicon', 'glyphicon-off', type ]"></i>
+            <i v-if="type === 'warning' && !icon" :class="['glyphicon', 'glyphicon-off', type ]"></i>
             <i v-if="icon" :class="[ 'glyphicon', `glyphicon-${icon}` ]"></i>
             <span class="toast-message"><slot>{{ message }}</slot></span>
         </div>
@@ -26,9 +26,10 @@
     white-space: nowrap;
     display: inline-block;
     vertical-align: middle;
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 50%;
+    z-index: 1080;
     // 定位想用transform，但是和animation.css里的样式冲突，只能在.toast-content里right: 50%了
 
     // 堆叠模式下的样式重置
@@ -54,7 +55,8 @@
 
         i,
         .toast-message {
-            font-size: 12px;
+            font-size: 14px;
+            line-height: 18px;
             display: inline-block;
             vertical-align: middle;
         }
@@ -78,9 +80,12 @@
 .toast-enter {
     -webkit-animation: bounceInDown .3s;
     animation: bounceInDown .3s;
+
+    &.stack {
+        -webkit-animation: bounceInRight .3s;
+        animation: bounceInRight .3s;
+    }
 }
-
-
 .toast-leave {
     -webkit-animation: fadeOutUp .3s;
     animation: fadeOutUp .3s;
@@ -177,9 +182,80 @@
     transform: translate3d(0, -100%, 0);
   }
 }
+
+/* stack mode animation */
+@-webkit-keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
 </style>
 
 <script>
+const DEFAULT_DURATION = 2
+
 const ToastItem = {
     name: 'vc-toast-item',
     props: {
@@ -190,8 +266,7 @@ const ToastItem = {
             default: 'info'
         },
         duration: {
-            type: [Number, String],
-            default: 2
+            type: [Number, String]
         },
         icon: String
     },
@@ -204,6 +279,9 @@ const ToastItem = {
         }
     },
     created () {
+        if (!this.duration) {
+            this.duration = this.$parent.duration || DEFAULT_DURATION
+        }
         this.show = true
         this.cTop = this.$parent.cTop
         this.stack = this.$parent.stack
@@ -246,8 +324,5 @@ const ToastItem = {
         }
     }
 }
-
-ToastItem.DEFAULT_DURATION = 2
-ToastItem.DEFAULT_INFO_ICON = 'cloud'
 export default ToastItem
 </script>

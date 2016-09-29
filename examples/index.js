@@ -17,9 +17,13 @@ new Vue({
             top: null,
             right: null,
             stack: false,
+            duration: 3,
             classname: 'toast-position'
         }
 	},
+    ready () {
+        Toast.info('来自快捷函数调用的10秒 info Toast', 10)
+    },
     methods: {
         showMeTenSeconds () {
             this.duration = 10

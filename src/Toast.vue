@@ -28,9 +28,7 @@
 <script>
 import vcToastItem from './ToastItem.vue'
 
-const { DEFAULT_DURATION, DEFAULT_INFO_ICON } = vcToastItem
-
-const Toast = {
+export default {
     name: 'vc-toast',
     props: {
         toasts: {
@@ -44,7 +42,8 @@ const Toast = {
             default: false 
         },
         top: String,
-        right: String
+        right: String,
+        duration: [Number, String] // 全局设置duration，优先级大于子元素默认duraiton，小于快捷函数调用传入
     },
     components: {
         vcToastItem
@@ -81,23 +80,23 @@ const Toast = {
     ready () {
         this.info = (...args) => {
             args.unshift('info')
-            console.log(args)
             this.showToast(args)
         } 
         this.success = (...args) => {
             args.unshift('success')
-            this.showToast(args[0], args[1], args[2], args[3])
+            this.showToast(args)
         } 
         this.warning = (...args) => {
             args.unshift('warning')
-            this.showToast(args[0], args[1], args[2], args[3])
+            this.showToast(args)
         } 
         this.danger = (...args) => {
             args.unshift('danger')
-            this.showToast(args[0], args[1], args[2], args[3])
+            this.showToast(args)
         } 
         // export to window
-        window.vcToast = this
+        window.t = this
+        window.Toast = this
     },
     methods: {
         // showToast (type, message, duration = DEFAULT_DURATION, icon) {
@@ -105,7 +104,7 @@ const Toast = {
             let [
                 type,
                 message,
-                duration = DEFAULT_DURATION,
+                duration,
                 icon
             ] = options 
             if (isNaN(duration)) {
@@ -116,6 +115,4 @@ const Toast = {
         }
     }
 }
-
-export default Toast 
 </script>

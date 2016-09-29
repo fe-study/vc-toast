@@ -854,7 +854,7 @@ exports = module.exports = __webpack_require__(17)();
 
 
 // module
-exports.push([module.i, ".vc-toast-item-component {\n  width: auto;\n  white-space: nowrap;\n  display: inline-block;\n  vertical-align: middle;\n  position: absolute;\n  top: 20%;\n  left: 50%;\n}\n.vc-toast-item-component.stack {\n  position: static;\n  display: block!important;\n  margin: 3px;\n}\n.vc-toast-item-component.stack .toast-content {\n  right: 0;\n}\n.vc-toast-item-component .toast-content {\n  position: relative;\n  right: 50%;\n  padding: 7px 16px;\n  border-radius: 6px;\n  border: 1px solid #d9d9d9;\n  box-shadow: 0 1px 8px rgba(99, 99, 99, 0.2);\n  background: #fff;\n  display: block;\n}\n.vc-toast-item-component .toast-content i,\n.vc-toast-item-component .toast-content .toast-message {\n  font-size: 12px;\n  display: inline-block;\n  vertical-align: middle;\n}\n.vc-toast-item-component .toast-content i.info {\n  color: #2facf7;\n}\n.vc-toast-item-component .toast-content i.success {\n  color: #87d068;\n}\n.vc-toast-item-component .toast-content i.danger {\n  color: #f50;\n}\n.vc-toast-item-component .toast-content i.warning {\n  color: #fa0;\n}\n.toast-transition {\n  display: inline-block;\n}\n.toast-enter {\n  -webkit-animation: bounceInDown .3s;\n  animation: bounceInDown .3s;\n}\n.toast-leave {\n  -webkit-animation: fadeOutUp .3s;\n  animation: fadeOutUp .3s;\n}\n@-webkit-keyframes bounceInDown {\n  from,\n  60%,\n  75%,\n  90%,\n  to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -3000px, 0);\n    transform: translate3d(0, -3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 25px, 0);\n    transform: translate3d(0, 25px, 0);\n  }\n  75% {\n    -webkit-transform: translate3d(0, -10px, 0);\n    transform: translate3d(0, -10px, 0);\n  }\n  90% {\n    -webkit-transform: translate3d(0, -50px, 0);\n    transform: translate3d(0, -50px, 0);\n  }\n  to {\n    -webkit-transform: none;\n    transform: none;\n  }\n}\n@keyframes bounceInDown {\n  from,\n  60%,\n  75%,\n  90%,\n  to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -3000px, 0);\n    transform: translate3d(0, -3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 25px, 0);\n    transform: translate3d(0, 25px, 0);\n  }\n  75% {\n    -webkit-transform: translate3d(0, -10px, 0);\n    transform: translate3d(0, -10px, 0);\n  }\n  90% {\n    -webkit-transform: translate3d(0, 5px, 0);\n    transform: translate3d(0, 5px, 0);\n  }\n  to {\n    -webkit-transform: none;\n    transform: none;\n  }\n}\n@-webkit-keyframes fadeOutUp {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -100%, 0);\n    transform: translate3d(0, -100%, 0);\n  }\n}\n@keyframes fadeOutUp {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -100%, 0);\n    transform: translate3d(0, -100%, 0);\n  }\n}\n", ""]);
+exports.push([module.i, ".vc-toast-item-component {\n  width: auto;\n  white-space: nowrap;\n  display: inline-block;\n  vertical-align: middle;\n  position: fixed;\n  top: 20%;\n  left: 50%;\n  z-index: 1080;\n}\n.vc-toast-item-component.stack {\n  position: static;\n  display: block!important;\n  margin: 3px;\n}\n.vc-toast-item-component.stack .toast-content {\n  right: 0;\n}\n.vc-toast-item-component .toast-content {\n  position: relative;\n  right: 50%;\n  padding: 7px 16px;\n  border-radius: 6px;\n  border: 1px solid #d9d9d9;\n  box-shadow: 0 1px 8px rgba(99, 99, 99, 0.2);\n  background: #fff;\n  display: block;\n}\n.vc-toast-item-component .toast-content i,\n.vc-toast-item-component .toast-content .toast-message {\n  font-size: 14px;\n  line-height: 18px;\n  display: inline-block;\n  vertical-align: middle;\n}\n.vc-toast-item-component .toast-content i.info {\n  color: #2facf7;\n}\n.vc-toast-item-component .toast-content i.success {\n  color: #87d068;\n}\n.vc-toast-item-component .toast-content i.danger {\n  color: #f50;\n}\n.vc-toast-item-component .toast-content i.warning {\n  color: #fa0;\n}\n.toast-transition {\n  display: inline-block;\n}\n.toast-enter {\n  -webkit-animation: bounceInDown .3s;\n  animation: bounceInDown .3s;\n}\n.toast-enter.stack {\n  -webkit-animation: bounceInRight .3s;\n  animation: bounceInRight .3s;\n}\n.toast-leave {\n  -webkit-animation: fadeOutUp .3s;\n  animation: fadeOutUp .3s;\n}\n@-webkit-keyframes bounceInDown {\n  from,\n  60%,\n  75%,\n  90%,\n  to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -3000px, 0);\n    transform: translate3d(0, -3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 25px, 0);\n    transform: translate3d(0, 25px, 0);\n  }\n  75% {\n    -webkit-transform: translate3d(0, -10px, 0);\n    transform: translate3d(0, -10px, 0);\n  }\n  90% {\n    -webkit-transform: translate3d(0, -50px, 0);\n    transform: translate3d(0, -50px, 0);\n  }\n  to {\n    -webkit-transform: none;\n    transform: none;\n  }\n}\n@keyframes bounceInDown {\n  from,\n  60%,\n  75%,\n  90%,\n  to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -3000px, 0);\n    transform: translate3d(0, -3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 25px, 0);\n    transform: translate3d(0, 25px, 0);\n  }\n  75% {\n    -webkit-transform: translate3d(0, -10px, 0);\n    transform: translate3d(0, -10px, 0);\n  }\n  90% {\n    -webkit-transform: translate3d(0, 5px, 0);\n    transform: translate3d(0, 5px, 0);\n  }\n  to {\n    -webkit-transform: none;\n    transform: none;\n  }\n}\n@-webkit-keyframes fadeOutUp {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -100%, 0);\n    transform: translate3d(0, -100%, 0);\n  }\n}\n@keyframes fadeOutUp {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -100%, 0);\n    transform: translate3d(0, -100%, 0);\n  }\n}\n/* stack mode animation */\n@-webkit-keyframes bounceInRight {\n  from,\n  60%,\n  75%,\n  90%,\n  to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(3000px, 0, 0);\n    transform: translate3d(3000px, 0, 0);\n  }\n  60% {\n    opacity: 1;\n    -webkit-transform: translate3d(-25px, 0, 0);\n    transform: translate3d(-25px, 0, 0);\n  }\n  75% {\n    -webkit-transform: translate3d(10px, 0, 0);\n    transform: translate3d(10px, 0, 0);\n  }\n  90% {\n    -webkit-transform: translate3d(-5px, 0, 0);\n    transform: translate3d(-5px, 0, 0);\n  }\n  to {\n    -webkit-transform: none;\n    transform: none;\n  }\n}\n@keyframes bounceInRight {\n  from,\n  60%,\n  75%,\n  90%,\n  to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(3000px, 0, 0);\n    transform: translate3d(3000px, 0, 0);\n  }\n  60% {\n    opacity: 1;\n    -webkit-transform: translate3d(-25px, 0, 0);\n    transform: translate3d(-25px, 0, 0);\n  }\n  75% {\n    -webkit-transform: translate3d(10px, 0, 0);\n    transform: translate3d(10px, 0, 0);\n  }\n  90% {\n    -webkit-transform: translate3d(-5px, 0, 0);\n    transform: translate3d(-5px, 0, 0);\n  }\n  to {\n    -webkit-transform: none;\n    transform: none;\n  }\n}\n", ""]);
 
 // exports
 
@@ -883,7 +883,7 @@ module.exports = "<div class=\"vc-toast-component\" :class=\"{ 'stack': stack }\
 /* 36 */
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"vc-toast-item-component\"\n        v-if=\"show\"\n        transition=\"toast\"\n        :class=\"{ 'stack': stack }\"\n        :style=\"{ 'top': cTop, 'right': cRight }\"\n    >\n        <div class=\"toast-content\">\n            <i v-if=\"type === 'info' && !icon\" :class=\"[ 'glyphicon', 'glyphicon-cloud', type ]\"></i>\n            <i v-if=\"type === 'success' && !icon\" :class=\"[ 'glyphicon', 'glyphicon-ok', type ]\"></i>\n            <i v-if=\"type === 'danger' && !icon\" :class=\"[ 'glyphicon', 'glyphicon-remove', type ]\"></i>\n            <i v-if=\"type === 'warning' && !icon\" :class=\"[' glyphicon', 'glyphicon-off', type ]\"></i>\n            <i v-if=\"icon\" :class=\"[ 'glyphicon', `glyphicon-${icon}` ]\"></i>\n            <span class=\"toast-message\"><slot>{{ message }}</slot></span>\n        </div>\n    </div>";
+module.exports = "<div class=\"vc-toast-item-component\"\n        v-if=\"show\"\n        transition=\"toast\"\n        :class=\"{ 'stack': stack }\"\n        :style=\"{ 'top': cTop, 'right': cRight }\"\n    >\n        <div class=\"toast-content\">\n            <i v-if=\"type === 'info' && !icon\" :class=\"[ 'glyphicon', 'glyphicon-cloud', type ]\"></i>\n            <i v-if=\"type === 'success' && !icon\" :class=\"[ 'glyphicon', 'glyphicon-ok', type ]\"></i>\n            <i v-if=\"type === 'danger' && !icon\" :class=\"[ 'glyphicon', 'glyphicon-remove', type ]\"></i>\n            <i v-if=\"type === 'warning' && !icon\" :class=\"['glyphicon', 'glyphicon-off', type ]\"></i>\n            <i v-if=\"icon\" :class=\"[ 'glyphicon', `glyphicon-${icon}` ]\"></i>\n            <span class=\"toast-message\"><slot>{{ message }}</slot></span>\n        </div>\n    </div>";
 
 /***/ },
 /* 37 */
@@ -1454,39 +1454,7 @@ var _ToastItem2 = _interopRequireDefault(_ToastItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var DEFAULT_DURATION = _ToastItem2.default.DEFAULT_DURATION; // <template>
-//     <div class="vc-toast-component" :class="{ 'stack': stack }" :style="{ 'top': cTop, 'right': cRight }">
-//         <template v-for="t in ts">
-//             <slot>
-//             <vc-toast-item
-//                 :id="t._uuid"
-//                 :message="t.message"
-//                 :duration="t.duration"
-//                 :type="t.type"
-//                 :icon="t.icon"
-//             >
-//             </vc-toast-item>
-//             </slot>
-//         </template>
-//     </div>
-// </template>
-
-// <style>
-// .vc-toast-component {
-//     &.stack {
-//         position: absolute;
-//         top: 0;
-//         right: 0;
-//     }
-// }
-// </style>
-
-// <script>
-
-var DEFAULT_INFO_ICON = _ToastItem2.default.DEFAULT_INFO_ICON;
-
-
-var Toast = {
+exports.default = {
     name: 'vc-toast',
     props: {
         toasts: {
@@ -1500,7 +1468,8 @@ var Toast = {
             default: false
         },
         top: String,
-        right: String
+        right: String,
+        duration: [Number, String] // 全局设置duration，优先级大于子元素默认duraiton，小于快捷函数调用传入
     },
     components: {
         vcToastItem: _ToastItem2.default
@@ -1543,7 +1512,6 @@ var Toast = {
             }
 
             args.unshift('info');
-            console.log(args);
             _this.showToast(args);
         };
         this.success = function () {
@@ -1552,7 +1520,7 @@ var Toast = {
             }
 
             args.unshift('success');
-            _this.showToast(args[0], args[1], args[2], args[3]);
+            _this.showToast(args);
         };
         this.warning = function () {
             for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
@@ -1560,7 +1528,7 @@ var Toast = {
             }
 
             args.unshift('warning');
-            _this.showToast(args[0], args[1], args[2], args[3]);
+            _this.showToast(args);
         };
         this.danger = function () {
             for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
@@ -1568,10 +1536,11 @@ var Toast = {
             }
 
             args.unshift('danger');
-            _this.showToast(args[0], args[1], args[2], args[3]);
+            _this.showToast(args);
         };
         // export to window
-        window.vcToast = this;
+        window.t = this;
+        window.Toast = this;
     },
 
     methods: {
@@ -1581,8 +1550,7 @@ var Toast = {
 
             var type = _options[0];
             var message = _options[1];
-            var _options$ = _options[2];
-            var duration = _options$ === undefined ? DEFAULT_DURATION : _options$;
+            var duration = _options[2];
             var icon = _options[3];
 
             if (isNaN(duration)) {
@@ -1595,9 +1563,35 @@ var Toast = {
         }
     }
 };
-
-exports.default = Toast;
 // </script>
+// <template>
+//     <div class="vc-toast-component" :class="{ 'stack': stack }" :style="{ 'top': cTop, 'right': cRight }">
+//         <template v-for="t in ts">
+//             <slot>
+//             <vc-toast-item
+//                 :id="t._uuid"
+//                 :message="t.message"
+//                 :duration="t.duration"
+//                 :type="t.type"
+//                 :icon="t.icon"
+//             >
+//             </vc-toast-item>
+//             </slot>
+//         </template>
+//     </div>
+// </template>
+
+// <style>
+// .vc-toast-component {
+//     &.stack {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//     }
+// }
+// </style>
+
+// <script>
 
 /***/ },
 /* 69 */
@@ -1620,7 +1614,7 @@ Object.defineProperty(exports, "__esModule", {
 //             <i v-if="type === 'info' && !icon" :class="[ 'glyphicon', 'glyphicon-cloud', type ]"></i>
 //             <i v-if="type === 'success' && !icon" :class="[ 'glyphicon', 'glyphicon-ok', type ]"></i>
 //             <i v-if="type === 'danger' && !icon" :class="[ 'glyphicon', 'glyphicon-remove', type ]"></i>
-//             <i v-if="type === 'warning' && !icon" :class="[' glyphicon', 'glyphicon-off', type ]"></i>
+//             <i v-if="type === 'warning' && !icon" :class="['glyphicon', 'glyphicon-off', type ]"></i>
 //             <i v-if="icon" :class="[ 'glyphicon', `glyphicon-${icon}` ]"></i>
 //             <span class="toast-message"><slot>{{ message }}</slot></span>
 //         </div>
@@ -1637,9 +1631,10 @@ Object.defineProperty(exports, "__esModule", {
 //     white-space: nowrap;
 //     display: inline-block;
 //     vertical-align: middle;
-//     position: absolute;
+//     position: fixed;
 //     top: 20%;
 //     left: 50%;
+//     z-index: 1080;
 //     // 定位想用transform，但是和animation.css里的样式冲突，只能在.toast-content里right: 50%了
 
 //     // 堆叠模式下的样式重置
@@ -1665,7 +1660,8 @@ Object.defineProperty(exports, "__esModule", {
 
 //         i,
 //         .toast-message {
-//             font-size: 12px;
+//             font-size: 14px;
+//             line-height: 18px;
 //             display: inline-block;
 //             vertical-align: middle;
 //         }
@@ -1689,9 +1685,12 @@ Object.defineProperty(exports, "__esModule", {
 // .toast-enter {
 //     -webkit-animation: bounceInDown .3s;
 //     animation: bounceInDown .3s;
+
+//     &.stack {
+//         -webkit-animation: bounceInRight .3s;
+//         animation: bounceInRight .3s;
+//     }
 // }
-
-
 // .toast-leave {
 //     -webkit-animation: fadeOutUp .3s;
 //     animation: fadeOutUp .3s;
@@ -1788,9 +1787,80 @@ Object.defineProperty(exports, "__esModule", {
 //     transform: translate3d(0, -100%, 0);
 //   }
 // }
+
+// /* stack mode animation */
+// @-webkit-keyframes bounceInRight {
+//   from, 60%, 75%, 90%, to {
+//     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//   }
+
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(3000px, 0, 0);
+//     transform: translate3d(3000px, 0, 0);
+//   }
+
+//   60% {
+//     opacity: 1;
+//     -webkit-transform: translate3d(-25px, 0, 0);
+//     transform: translate3d(-25px, 0, 0);
+//   }
+
+//   75% {
+//     -webkit-transform: translate3d(10px, 0, 0);
+//     transform: translate3d(10px, 0, 0);
+//   }
+
+//   90% {
+//     -webkit-transform: translate3d(-5px, 0, 0);
+//     transform: translate3d(-5px, 0, 0);
+//   }
+
+//   to {
+//     -webkit-transform: none;
+//     transform: none;
+//   }
+// }
+
+// @keyframes bounceInRight {
+//   from, 60%, 75%, 90%, to {
+//     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//   }
+
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(3000px, 0, 0);
+//     transform: translate3d(3000px, 0, 0);
+//   }
+
+//   60% {
+//     opacity: 1;
+//     -webkit-transform: translate3d(-25px, 0, 0);
+//     transform: translate3d(-25px, 0, 0);
+//   }
+
+//   75% {
+//     -webkit-transform: translate3d(10px, 0, 0);
+//     transform: translate3d(10px, 0, 0);
+//   }
+
+//   90% {
+//     -webkit-transform: translate3d(-5px, 0, 0);
+//     transform: translate3d(-5px, 0, 0);
+//   }
+
+//   to {
+//     -webkit-transform: none;
+//     transform: none;
+//   }
+// }
 // </style>
 
 // <script>
+var DEFAULT_DURATION = 2;
+
 var ToastItem = {
     name: 'vc-toast-item',
     props: {
@@ -1801,8 +1871,7 @@ var ToastItem = {
             default: 'info'
         },
         duration: {
-            type: [Number, String],
-            default: 2
+            type: [Number, String]
         },
         icon: String
     },
@@ -1815,6 +1884,9 @@ var ToastItem = {
         };
     },
     created: function created() {
+        if (!this.duration) {
+            this.duration = this.$parent.duration || DEFAULT_DURATION;
+        }
         this.show = true;
         this.cTop = this.$parent.cTop;
         this.stack = this.$parent.stack;
@@ -1862,9 +1934,6 @@ var ToastItem = {
         }
     }
 };
-
-ToastItem.DEFAULT_DURATION = 2;
-ToastItem.DEFAULT_INFO_ICON = 'cloud';
 exports.default = ToastItem;
 // </script>
 
